@@ -2,6 +2,8 @@
 
 O ArchiSuite foi desenhado para respeitar e acelerar o fluxo natural do seu escritório. Injetamos automação e Inteligência Artificial nas 5 etapas críticas do projeto de interiores e arquitetura, eliminando retrabalho e aumentando a sua margem de lucro.
 
+**Quem nos procura** — pessoa física ou empresa — entrega a planta do apartamento ou da obra; nós fazemos o estudo, o levantamento, as métricas e o projeto. Antes era um serviço manual. Agora oferecemos o mesmo serviço de forma **automatizada com IA**: o ArchiSuite é a inteligência que facilita todo o processo, do briefing ao orçamento, para que o cliente receba o resultado com mais agilidade e precisão.
+
 ---
 
 ### 1. Briefing: Captura Inteligente de Desejos
@@ -28,3 +30,24 @@ A entrega final. Plantas técnicas, pontos elétricos/hidráulicos, detalhamento
 
 ### O Resultado Final
 Com o ArchiSuite, o seu escritório entrega o projeto mais rápido, o cliente aprova com menos revisões (Etapa 4) e a obra começa com segurança financeira total (Etapa 5). É tecnologia trabalhando para valorizar a sua arte.
+
+---
+
+### Como rodar o projeto
+
+```bash
+cd /home/admin/arsenal/git/arqhub
+npm install
+cp .env.example .env   # opcional: configurar variáveis
+npm run dev
+```
+
+Acesse [http://localhost:3000](http://localhost:3000). A documentação de arquitetura e o roadmap estão em `docs/`.
+
+**IA:** O projeto usa o **Google Gemini** (modelo flash, leve e rápido). Configure `GEMINI_API_KEY` no `.env` (chave em [Google AI Studio](https://aistudio.google.com/app/apikey)). A rota `POST /api/briefing` já extrai resumo do texto de briefing usando o Gemini.
+
+**Tudo local:** App, banco e arquivos rodam na **sua VM**. Em **`docs/VM-SETUP.md`** tem como descobrir se o Postgres já está rodando (sistema, Docker ou Kubernetes) e como configurar app + banco + pasta de uploads.
+
+**Contas e configuração:** Só precisa de conta para a **IA** (Google Gemini). Onde criar e o que configurar está em **`docs/SETUP-CONTAS-E-CONFIG.md`**.
+
+**Limites gratuitos:** Para saber até onde o MVP pode ir sem pagar (Gemini, Vercel, banco, storage), veja `docs/FREE-TIER.md`.

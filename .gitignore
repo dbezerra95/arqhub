@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build / next
+.next/
+out/
+build/
+dist/
+
+# Env (nunca commitar chaves)
+.env
+.env.local
+.env.*.local
+
+# Logs e cache
+*.log
+npm-debug.log*
+.cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads (dados locais)
+uploads/
+*.pdf
+!docs/**/*.pdf
+
+# SQLite (se usar local)
+*.db
+*.sqlite
